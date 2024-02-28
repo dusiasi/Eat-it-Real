@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MealPlan = void 0;
+const index_1 = require("./index");
+const Schema = index_1.mongoose.Schema;
+// export const Schema = mongoose.Schema;
+// const mealPlanSchema = new Schema({});
+// export const MealPlan = mongoose.model('MealPlan', mealPlanSchema);
+const mealPlanSchema = new Schema({ recipe: String });
+exports.MealPlan = index_1.mongoose.model('MealPlan', mealPlanSchema);
