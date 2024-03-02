@@ -18,23 +18,23 @@ export default function Navbar({ setMealData, mealPlan, setMealPlan }: Props) {
           <input name="query" />
           <button type="submit">Search</button>
         </form>
-        <Form setMealData={setMealData} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
+            <Route
+              path="/myMealPlan"
+              element={
+                <MyMealPlan mealPlan={mealPlan} setMealPlan={setMealPlan} />
+              }
+            />
+            <Route
+              path="/createPlan"
+              element={<Form setMealData={setMealData} />}
+            />
+          </Routes>
+        </BrowserRouter>
       </div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/myMealPlan"
-            element={
-              <MyMealPlan mealPlan={mealPlan} setMealPlan={setMealPlan} />
-            }
-          />
-          <Route
-            path="/createPlan"
-            element={<Form setMealData={setMealData} />}
-          />
-        </Routes>
-      </BrowserRouter>
     </>
   );
 }

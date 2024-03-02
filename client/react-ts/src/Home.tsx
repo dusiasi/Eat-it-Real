@@ -12,8 +12,8 @@ export default function Home({}: Props) {
 
   return (
     <div>
+      <Link to="/">Home</Link>
       <Link to="/myMealPlan">My Meal Plan</Link>
-      <button onClick={() => navigateToForm()}> Create Meal Plan</button>
       <Link to="/createPlan">Create Meal Plan</Link>
     </div>
   );
