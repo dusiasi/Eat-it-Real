@@ -3,7 +3,6 @@ import { MultiSelect } from 'react-multi-select-component';
 import { generateMealPlan } from '../APIService';
 import { Values } from '../types';
 import { MealData } from '../types';
-import { useNavigate } from 'react-router-dom';
 
 const diets = [
   { label: 'Gluten Free', value: 'gluten free' },
@@ -35,8 +34,6 @@ export default function Form({ setMealData }: Props) {
     alergies: '',
     timeFrame: '',
   });
-
-  const navigate = useNavigate();
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -72,66 +69,59 @@ export default function Form({ setMealData }: Props) {
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   }
 
-  function handleNavigateHome() {
-    navigate('/');
-  }
-
   return (
     <>
-      <a href="" onClick={() => handleNavigateHome()}>
-        Home
-      </a>
-      {/* {showForm ? ( */}
-      <form className="mealForm" onSubmit={handleSubmit}>
-        <label htmlFor="calories">
-          Calories:
-          <input
-            type="text"
-            placeholder="calories a day"
-            onChange={onChange}
-            name="calories"
-            value={formValues.calories}
-          />
-        </label>
-        <label htmlFor="dietChoice">
-          Diet choice:
-          <div className="multiselect">
-            <MultiSelect
-              options={diets}
-              value={selectedDiets}
-              onChange={setSelectedDiets}
-              labelledBy="Select"
+      {showForm ? (
+        <form className="mealForm" onSubmit={handleSubmit}>
+          <label htmlFor="calories">
+            Calories:
+            <input
+              type="text"
+              placeholder="calories a day"
+              onChange={onChange}
+              name="calories"
+              value={formValues.calories}
             />
-          </div>
-        </label>
-        <label htmlFor="alergies">
-          Alergies:
-          <input
-            type="text"
-            placeholder="exclude ingredients..."
-            onChange={onChange}
-            name="alergies"
-            value={formValues.alergies}
-          />
-        </label>
-        <label htmlFor="dailyWeekly">
-          Daily/weekly:
-          <input
-            type="text"
-            placeholder="daily/weekly..."
-            onChange={onChange}
-            name="timeFrame"
-            value={formValues.timeFrame}
-          />
-        </label>
-        <button id="btnSubmit" type="submit">
-          Create Meal Plan
-        </button>
-        {/* <button onClick={() => setShowForm(false)}>Discard</button> */}
-      </form>
-      {/* ) : (
+          </label>
+          <label htmlFor="dietChoice">
+            Diet choice:
+            <div className="multiselect">
+              <MultiSelect
+                options={diets}
+                value={selectedDiets}
+                onChange={setSelectedDiets}
+                labelledBy="Select"
+              />
+            </div>
+          </label>
+          <label htmlFor="alergies">
+            Alergies:
+            <input
+              type="text"
+              placeholder="exclude ingredients..."
+              onChange={onChange}
+              name="alergies"
+              value={formValues.alergies}
+            />
+          </label>
+          <label htmlFor="dailyWeekly">
+            Daily/weekly:
+            <input
+              type="text"
+              placeholder="daily/weekly..."
+              onChange={onChange}
+              name="timeFrame"
+              value={formValues.timeFrame}
+            />
+          </label>
+          <button id="btnSubmit" type="submit">
+            Create Meal Plan
+          </button>
+          {<button onClick={() => setShowForm(false)}>Discard</button>}
+        </form>
+      ) : (
         <button onClick={() => setShowForm(true)}>Create Meal Plan</button>
-      )} */}
+      )}
     </>
   );
 }

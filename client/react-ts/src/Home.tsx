@@ -1,20 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import Form from './components/Form';
+import { MealData } from './types';
+import * as React from 'react';
+import { useState } from 'react';
+import { addMyPlan } from './APIService';
+import MealList from './components/MealList';
 
-type Props = {};
+export default function Home() {
+  const [mealData, setMealData] = useState<MealData>({} as MealData);
 
-export default function Home({}: Props) {
-  const navigate = useNavigate();
-  function navigateToForm() {
-    navigate('/createPlan');
+  async function addToMyplan() {
+    console.log('add the mealData to my plan');
+    // do i need return or sth else?
+    await addMyPlan(mealData);
   }
 
   return (
-    <div>
-      <Link to="/">Home</Link>
-      <Link to="/myMealPlan">My Meal Plan</Link>
-      <Link to="/createPlan">Create Meal Plan</Link>
-    </div>
+    <>
+      <div>
+        <Form setMealData={setMealData} />
+      </div>
+      <div className="container">
+        {Object.values(mealData).length !== 0 && (
+          <React.Fragment>
+            <button className="button" onClick={addToMyplan}>
+              Add to my Plan
+            </button>
+            <MealList mealData={mealData} />
+          </React.Fragment>
+        )}
+      </div>
+    </>
   );
 }

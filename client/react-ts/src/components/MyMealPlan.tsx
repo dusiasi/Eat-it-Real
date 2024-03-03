@@ -1,10 +1,8 @@
-import { MealPlan, MealsT, Nutrients } from '../types';
+import { MealPlan } from '../types';
 import { getMyPlan } from '../APIService';
 import MealList from './MealList';
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 type Props = {
   mealPlan: MealPlan[];
@@ -22,8 +20,6 @@ type Props = {
 //it still shows the navbar below, check it so that it is not there
 
 export default function MyMealPlan({ mealPlan, setMealPlan }: Props) {
-  const navigate = useNavigate();
-
   useEffect(() => {
     async function setData() {
       const result = await getMyPlan();
@@ -33,15 +29,8 @@ export default function MyMealPlan({ mealPlan, setMealPlan }: Props) {
     setData();
   }, []);
 
-  function handleClick() {
-    navigate('/');
-  }
-
   return (
     <>
-      <a href="" onClick={() => handleClick()}>
-        Home
-      </a>
       <section className="mealPlanContainer">
         {mealPlan.map((el, i) => (
           <React.Fragment key={i}>
