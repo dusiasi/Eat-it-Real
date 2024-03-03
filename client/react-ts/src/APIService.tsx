@@ -54,3 +54,22 @@ export async function getMyPlan() {
     console.log(error);
   }
 }
+
+// DELETE THE PLAN FROM MEALLIST
+export async function deleteFromPlan(id) {
+  try {
+    const response = await fetch(baseUrl + '/myMealPlan/' + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      mode: 'cors',
+    });
+    if (!response.ok) throw new Error('Failed to delete');
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}

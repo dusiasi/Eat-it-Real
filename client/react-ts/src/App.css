@@ -1,11 +1,18 @@
-.navbar {
+nav {
   height: 50%;
   min-height: 70px;
   background-color: green;
   padding: min(3vh, 3rem);
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
+
+/* .navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+  align-items: center;
+} */
 
 .mealForm {
   width: 50%;

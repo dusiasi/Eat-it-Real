@@ -40,7 +40,6 @@ export async function generateMealPlan(body: {
     const url = `${baseURL}?apiKey=${apiKey}&${params}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
 
     // second api call to get the recipe info
     if (body.timeFrame === 'daily') {
@@ -76,7 +75,6 @@ async function getRecipeInformation(id: number) {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    // const recipeInformation = [data.image, data.summary];
     const recipeInformation = { image: data.image, summary: data.summary };
 
     return recipeInformation;

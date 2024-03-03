@@ -6,3 +6,4 @@ export const router = Router();
 router.post('/generate', mealPlan.generatePlan);
 router.post('/myplan', mealPlan.addToMyplan);
 router.get('/myplan', mealPlan.getAllMeals);
+router.delete('/myMealPlan/:id', mealPlan.deleteFromPlan);

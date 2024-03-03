@@ -1,36 +1,42 @@
 import Meals from './Meals';
-import { MealData } from '../types';
-import { MealsT } from '../types';
-// import { addMyPlan, getMyPlan } from '../APIService';
+import { MealData, MealPlan } from '../types';
+import { deleteFromPlan } from '../APIService';
 
 type Props = {
   mealData: MealData;
+  setMealPlan: React.Dispatch<React.SetStateAction<Array<MealPlan>>>;
+  mealPlan: MealPlan[];
 };
 
 // TODOS:
-//1. do the week plan later!!!! doesnt work with this one
-// 2.take the button addtomyplan from here and put it up on the container-so that it doesnt show on every list
+//1. do the week plan later!!!! doesnt work with this one!!!important-if you dont manage-delete the weekly option
+//2.type error by _id below !!!! check with Felipe
 
-// here we do the loop over the meallist and then pass it to meal component to display it there
-export default function MealList({ mealData }: Props) {
+// the list when we get the data-mealData- either from the db or the api, where we loop over and render the meals
+export default function MealList({ mealData, setMealPlan }: Props) {
+  console.log(mealData);
+  const id = mealData._id;
   const nutrients = mealData.nutrients;
   const meals = mealData.meals;
 
-  //POST TO DATABASE-ADD TO MY PLAN
-  // so here i make a post request to the server, and add the meal to my plan
-  // async function addToMyplan() {
-  //   console.log('add the mealData to my plan');
-  //   // do i need return or sth else?
-  //   await addMyPlan(mealData);
-  // }
+  async function handleDelete() {
+    try {
+      await deleteFromPlan(id);
+
+      setMealPlan((prevList) =>
+        prevList.filter((el) => {
+          return el._id !== id;
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <>
       <div className="containerMealList">
         <div className="wrapper">
-          {/* <button className="button" onClick={addToMyplan}>
-            Add to my Plan
-          </button> */}
           <section className="nutrients">
             <h1>Nutrients</h1>
             <ul>
@@ -45,6 +51,9 @@ export default function MealList({ mealData }: Props) {
           {meals.map((meal, i) => (
             <Meals key={i} meal={meal} />
           ))}
+          <button className="buttonDelete" onClick={handleDelete}>
+            Delete from plan
+          </button>
         </section>
       </div>
     </>
