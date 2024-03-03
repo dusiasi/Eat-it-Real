@@ -30,6 +30,7 @@ const mealPlanSchema = new Schema({
     fat: Number,
     carbohydrates: Number,
   },
+  created_at: { type: Date, default: Date.now() },
 });
 
 export const MealPlan = mongoose.model('MealPlan', mealPlanSchema);

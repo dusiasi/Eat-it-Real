@@ -26,10 +26,17 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
     async function setData() {
       const result = await getMyPlan();
 
-      setMealPlan(result);
+      // not sure of this
+      const sortedList = [...result].sort((a, b) => {
+        return Date.parse(b.created_at) - Date.parse(a.created_at);
+      });
+      setMealPlan(sortedList);
     }
+
     setData();
   }, []);
+
+  console.log(mealPlan);
 
   return (
     <>

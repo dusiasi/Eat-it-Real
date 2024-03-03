@@ -17,6 +17,7 @@ export default function MealList({ mealData, setMealPlan }: Props) {
   const id = mealData._id;
   const nutrients = mealData.nutrients;
   const meals = mealData.meals;
+  const created_at = mealData.created_at;
 
   async function handleDelete() {
     try {
@@ -45,6 +46,7 @@ export default function MealList({ mealData, setMealPlan }: Props) {
               <li>Carbohydrates:{nutrients.carbohydrates}</li>
             </ul>
           </section>
+          <div className="dateTime">Created at:{created_at}</div>
         </div>
         <section className="mealList">
           {meals.map((meal, i) => (

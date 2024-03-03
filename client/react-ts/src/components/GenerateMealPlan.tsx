@@ -20,6 +20,8 @@ export default function GenerateMealPlan({
   async function addToMyplan() {
     const id = mealData._id;
 
+    mealData = { ...mealData, created_at: Date.now() };
+
     const exists = mealPlan.some((el) => el._id === id);
 
     if (!exists) {

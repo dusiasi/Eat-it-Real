@@ -29,6 +29,7 @@ export type MealData = {
   meals: Array<MealsT>;
   nutrients: Nutrients;
   _id: string;
+  created_at: number;
 };
 
 export type MealPlan = Array<MealData>;
