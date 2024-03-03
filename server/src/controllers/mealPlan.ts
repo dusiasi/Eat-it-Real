@@ -27,8 +27,9 @@ exports.addToMyplan = async (req: Request, res: Response) => {
   const body = req.body;
   const { meals, nutrients } = body;
 
+  console.log(body);
   MealPlan.create({ meals, nutrients });
-  res.status(201).json({ msg: 'success' });
+  res.status(201).json(body);
 
   try {
   } catch (error) {

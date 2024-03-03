@@ -14,7 +14,6 @@ type Props = {
 
 // the list when we get the data-mealData- either from the db or the api, where we loop over and render the meals
 export default function MealList({ mealData, setMealPlan }: Props) {
-  console.log(mealData);
   const id = mealData._id;
   const nutrients = mealData.nutrients;
   const meals = mealData.meals;

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import { MealData, MealPlan } from './types';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
+import GenerateMealPlan from './components/GenerateMealPlan';
 
 // TODOS:
 
@@ -35,6 +36,17 @@ function App() {
               mealPlan={mealPlan}
               setMealPlan={setMealPlan}
               mealData={mealData}
+            />
+          }
+        />
+        <Route
+          path="/generateMealPlan"
+          element={
+            <GenerateMealPlan
+              mealPlan={mealPlan}
+              setMealPlan={setMealPlan}
+              mealData={mealData}
+              setMealData={setMealData}
             />
           }
         />

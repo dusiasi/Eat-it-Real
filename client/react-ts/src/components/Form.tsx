@@ -45,7 +45,6 @@ export default function Form({ setMealData }: Props) {
     });
 
     const values = { ...formValues, diet: dietValues };
-    console.log(values);
 
     // post request to the backend
     const mealData = await generateMealPlan(values);

@@ -20,6 +20,7 @@ type Props = {
 // add weekly plan
 // styling!!!
 
+// get the meal plan from the database
 export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
   useEffect(() => {
     async function setData() {

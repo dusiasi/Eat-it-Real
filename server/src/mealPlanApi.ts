@@ -1,7 +1,7 @@
 // check later why this doesnt work
 const API_KEY = process.env.API_KEY;
-// const apiKey = '4156b7dc1b5e4110912cbca90242f78a';
-const apiKey = 'f89493870f7f49218037ead5e2499e6a';
+const apiKey = '4156b7dc1b5e4110912cbca90242f78a';
+// const apiKey = 'f89493870f7f49218037ead5e2499e6a';
 
 // TODOS:
 // weekly plan-at the moment doesnt work i get only daily plan
