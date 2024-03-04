@@ -6,8 +6,9 @@ import Navbar from './components/Navbar';
 import { MealData, MealPlan } from './types';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import GenerateMealPlan from './components/GenerateMealPlan';
+import GenerateMyMealPlan from './components/GenerateMyMealPlan';
 
+// APP:Router and the setstates
 // TODOS:
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
         <Route
           path="/generateMealPlan"
           element={
-            <GenerateMealPlan
+            <GenerateMyMealPlan
               mealPlan={mealPlan}
               setMealPlan={setMealPlan}
               mealData={mealData}

@@ -11,7 +11,8 @@ type Props = {
   setMealData: React.Dispatch<React.SetStateAction<MealData>>;
 };
 
-export default function GenerateMealPlan({
+// GENERATEMEALPLAN: Add to my plan function, to add the generated meal plan to my meal plan
+export default function GenerateMyMealPlan({
   mealPlan,
   setMealPlan,
   mealData,

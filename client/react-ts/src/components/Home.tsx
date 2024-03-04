@@ -11,6 +11,8 @@ type Props = {
   setMealData: React.Dispatch<React.SetStateAction<MealData>>;
 };
 
+// Home component: home page, does not have anything yet
+
 // TODOS
 // 1. addtomyplan !! check if the data-mealplan is already there, if yes do not add the same plan
 // 2.Home page should refresh to the beginning, at the moment when i create a new plan, because it is in the homepage, it just stays there- check how to add refreshing to the homepage or make the createmeal plan to another route and page!
