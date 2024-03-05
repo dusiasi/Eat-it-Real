@@ -3,8 +3,6 @@
 import { Link } from 'react-router-dom';
 import homepage1 from '../images/homepage2.jpg';
 
-// TODOS
-
 export default function Home() {
   return (
     <>

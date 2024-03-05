@@ -9,7 +9,6 @@ import Home from './components/Home';
 import GenerateMyMealPlan from './components/GenerateMyMealPlan';
 
 // APP:Router and the setstates
-// TODOS:
 
 function App() {
   const [mealPlan, setMealPlan] = useState<Array<MealPlan>>([]);

@@ -75,57 +75,57 @@ export default function Form({ setMealData }: Props) {
 
   return (
     <>
-      {showForm ? (
-        <form className="mealForm" onSubmit={handleSubmit}>
-          <label htmlFor="calories">
-            Calories:
-            <input
-              type="text"
-              placeholder="calories a day"
-              onChange={onChange}
-              name="calories"
-              value={formValues.calories}
+      {/* {showForm ? ( */}
+      <form className="mealForm" onSubmit={handleSubmit}>
+        <label htmlFor="calories">
+          Calories:
+          <input
+            type="text"
+            placeholder="calories a day"
+            onChange={onChange}
+            name="calories"
+            value={formValues.calories}
+          />
+        </label>
+        <label htmlFor="dietChoice">
+          Diet choice:
+          <div className="multiselect">
+            <MultiSelect
+              options={diets}
+              value={selectedDiets}
+              onChange={setSelectedDiets}
+              labelledBy="Select"
             />
-          </label>
-          <label htmlFor="dietChoice">
-            Diet choice:
-            <div className="multiselect">
-              <MultiSelect
-                options={diets}
-                value={selectedDiets}
-                onChange={setSelectedDiets}
-                labelledBy="Select"
-              />
-            </div>
-          </label>
-          <label htmlFor="alergies">
-            Alergies:
-            <input
-              type="text"
-              placeholder="exclude ingredients..."
-              onChange={onChange}
-              name="alergies"
-              value={formValues.alergies}
-            />
-          </label>
-          <label htmlFor="dailyWeekly">
-            Daily/weekly:
-            <input
-              type="text"
-              placeholder="daily/weekly..."
-              onChange={onChange}
-              name="timeFrame"
-              value={formValues.timeFrame}
-            />
-          </label>
-          <button id="btnSubmit" type="submit">
-            Create Meal Plan
-          </button>
-          {<button onClick={() => setShowForm(false)}>Discard</button>}
-        </form>
-      ) : (
+          </div>
+        </label>
+        <label htmlFor="alergies">
+          Alergies:
+          <input
+            type="text"
+            placeholder="exclude ingredients..."
+            onChange={onChange}
+            name="alergies"
+            value={formValues.alergies}
+          />
+        </label>
+        <label htmlFor="dailyWeekly">
+          Daily/weekly:
+          <input
+            type="text"
+            placeholder="daily/weekly..."
+            onChange={onChange}
+            name="timeFrame"
+            value={formValues.timeFrame}
+          />
+        </label>
+        <button id="btnSubmit" type="submit">
+          Create Meal Plan
+        </button>
+        {/* {<button onClick={() => setShowForm(false)}>Discard</button>} */}
+      </form>
+      {/* ) : (
         <button onClick={() => setShowForm(true)}>Create Meal Plan</button>
-      )}
+      )} */}
     </>
   );
 }
