@@ -25,23 +25,18 @@ export default function MealList({ mealData }: Props) {
   return (
     <>
       <div className="containerMealList">
-        <div className="wrapper">
-          <section className="nutrients">
-            <h1>Nutrients</h1>
-            <ul>
-              <li>Calories:{nutrients.calories}</li>
-              <li>Protein:{nutrients.protein}</li>
-              <li>Fat:{nutrients.fat}</li>
-              <li>Carbohydrates:{nutrients.carbohydrates}</li>
-            </ul>
-          </section>
-          {/* <div className="dateTime">Created at:{formattedDate}</div> */}
-        </div>
         <section className="mealList">
           {meals.map((meal, i) => (
             <Meals key={i} meal={meal} />
           ))}
         </section>
+        <div className="nutrients">
+          <h3>Nutrients:</h3>
+          <p>Calories:{nutrients.calories}</p>
+          <p>Protein:{nutrients.protein}</p>
+          <p>Fat:{nutrients.fat}</p>
+          <p>Carbohydrates:{nutrients.carbohydrates}</p>
+        </div>
       </div>
     </>
   );

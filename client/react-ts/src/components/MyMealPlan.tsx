@@ -49,6 +49,7 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
   return (
     <>
       <section className="mealPlanContainer">
+        <h1>My Meal Plan</h1>
         {mealPlan.map((el, i) => (
           <React.Fragment key={i}>
             <MealList mealData={el} setMealPlan={setMealPlan} />

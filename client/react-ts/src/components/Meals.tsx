@@ -2,6 +2,7 @@ import { MealsT } from '../types';
 
 type Props = {
   meal: MealsT;
+  key: number;
 };
 
 // Meals: the smallest item of the components, the indivudual meal items
@@ -18,14 +19,16 @@ export default function Meals({ meal }: Props) {
   return (
     <div className="mealItem">
       <div className="mealInfo">
-        <img className="image" src={image} alt="recipe" />
+        <div className="image-crop">
+          <img className="image" src={image} alt="recipe" />
+        </div>
         <div className="title">{title}</div>
         <div className="mealInfo-wrapper">
-          <div>readyInMinutes: {readyInMinutes}</div>
-          <div>servings: {servings}</div>
+          <div>Preparation time: {readyInMinutes}</div>
+          {/* <div>Servings: {servings}</div> */}
         </div>
         <a className="recipeInfo" href={sourceUrl}>
-          Go to Recipe
+          <button className="btnSource">Go to Recipe</button>
         </a>
       </div>
     </div>

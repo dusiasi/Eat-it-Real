@@ -109,7 +109,7 @@ export default function Form({ setMealData }: Props) {
             />
           </div>
         </label>
-        <button id="btnSubmit" type="submit">
+        <button className="btnSubmit" type="submit">
           Create Meal Plan
         </button>
         {/* {<button onClick={() => setShowForm(false)}>Discard</button>} */}

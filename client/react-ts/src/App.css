@@ -71,6 +71,7 @@ nav a {
   width: 180px;
   padding: 0.8rem;
   opacity: 0.7;
+  white-space: nowrap;
 }
 
 .createButton:hover {
@@ -132,7 +133,7 @@ nav a {
   padding: 0 !important;
 }
 
-#btnSubmit {
+.btnSubmit {
   background-color: #8bb332;
   color: white;
   border: none;
@@ -140,6 +141,7 @@ nav a {
   width: 20%;
   padding: 0.4rem;
   opacity: 0.7;
+  white-space: nowrap;
 }
 
 #btnSubmit:hover {
@@ -154,64 +156,135 @@ nav a {
 }
 
 .mealPlanContainer {
-  padding: min(3vh, 3rem);
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  justify-content: flex-start;
+  padding-block: 3rem;
+  padding-inline: 6rem;
+  writing-mode: horizontal-tb;
+  margin: 0 auto;
   gap: 2rem;
+}
+
+h1 {
+  padding-inline-start: 1rem;
 }
 
 .containerMealList {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.wrapper {
-  /* display: flex;
-  justify-content: space-between; */
+.nutrients {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5rem;
 }
 
 .mealList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  /* check if i need the rows */
-  grid-auto-rows: minmax(300px, auto);
-  padding: min(6vh, 6rem);
-  /* background-color: white; */
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(3, 1fr); */
+}
+
+.buttonDelete {
+  width: 20%;
+  background-color: white;
+  white-space: nowrap;
 }
 
 .mealItem {
   background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: solid 5px black;
+  /* padding: 2rem; */
+  background-color: white;
+  /* margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center; */
+  gap: 2rem;
+  background-color: white;
 }
 
 .mealInfo {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
   background-color: white;
+  /* padding: 2rem;
+  background-color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  /* gap: 0.2rem; */
+}
+
+.btnSource {
+  align-self: flex-start;
+  background-color: #8bb332;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.3rem;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.btnSource:hover {
+  opacity: 1;
 }
 
 .title {
   background-color: white;
+  align-self: flex-start;
+
+  /* margin: 0 auto; */
+  /* padding-inline: 1rem; */
 }
 .mealInfo-wrapper div {
-  background-color: white;
+  /* background-color: white; */
+  /* align-self: flex-start; */
 }
 .recipeInfo {
   background-color: white;
+  /* align-self: flex-start; */
 }
 
 .image {
-  width: 90%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.image-crop {
+  height: 200px;
+  width: 350px;
+  overflow: hidden;
+  position: relative;
+  align-self: center;
 }
 
 .button {
   height: 20%;
   background-color: red;
-}
-
-.mealInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: stretch;
-  gap: 0.2rem;
-  padding: 1rem;
+  white-space: nowrap;
 }
