@@ -55,6 +55,7 @@ nav a {
   flex-direction: column;
   gap: 3rem;
   font-weight: 600;
+  line-height: 80px;
 }
 
 .homeImage {
@@ -151,8 +152,8 @@ nav a {
 /* MEALLIST */
 
 .container {
-  padding: min(3vh, 3rem);
-  background-color: yellow;
+  padding: min(6vh, 6rem);
+  position: relative;
 }
 
 .mealPlanContainer {
@@ -163,7 +164,7 @@ nav a {
   padding-inline: 6rem;
   writing-mode: horizontal-tb;
   margin: 0 auto;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 h1 {
@@ -174,6 +175,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 2rem;
 }
 
 .nutrients {
@@ -191,47 +193,30 @@ h1 {
 }
 
 .buttonDelete {
-  width: 20%;
-  background-color: white;
   white-space: nowrap;
+  align-self: flex-end;
+  opacity: 0.5;
+}
+.buttonDelete:hover {
+  opacity: 1;
 }
 
 .mealItem {
   background-color: white;
   border-radius: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border: solid 5px black;
-  /* padding: 2rem; */
+  padding: 1rem;
   background-color: white;
-  /* margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  /* display: flex;
-  flex-direction: column; */
-  /* align-items: center; */
-  gap: 2rem;
   background-color: white;
 }
 
 .mealInfo {
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   background-color: white;
-  /* padding: 2rem;
-  background-color: white;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  /* gap: 0.2rem; */
+  gap: 1rem;
+  /* margin: 1rem; */
 }
 
 .btnSource {
@@ -240,7 +225,7 @@ h1 {
   color: white;
   border: none;
   border-radius: 0.5rem;
-  width: 100%;
+  width: 50%;
   padding: 0.3rem;
   opacity: 0.7;
   white-space: nowrap;
@@ -252,13 +237,19 @@ h1 {
 .title {
   background-color: white;
   align-self: flex-start;
-
-  /* margin: 0 auto; */
-  /* padding-inline: 1rem; */
+  font-weight: bold;
 }
-.mealInfo-wrapper div {
-  /* background-color: white; */
+.mealInfo-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: flex-start;
+}
+
+#recipeInfo {
+  background-color: white;
   /* align-self: flex-start; */
+  font-size: x-small;
 }
 .recipeInfo {
   background-color: white;
@@ -272,7 +263,7 @@ h1 {
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .image-crop {
@@ -281,10 +272,19 @@ h1 {
   overflow: hidden;
   position: relative;
   align-self: center;
+  padding: 2rem;
 }
 
-.button {
-  height: 20%;
-  background-color: red;
+.buttonAdd {
+  background-color: white;
   white-space: nowrap;
+  position: absolute;
+  top: 10%;
+  left: 94%;
+  margin: 5px;
+  cursor: pointer;
+  opacity: 0.3;
+}
+.buttonAdd:hover {
+  opacity: 1;
 }

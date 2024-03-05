@@ -22,14 +22,16 @@ export default function Meals({ meal }: Props) {
         <div className="image-crop">
           <img className="image" src={image} alt="recipe" />
         </div>
-        <div className="title">{title}</div>
         <div className="mealInfo-wrapper">
-          <div>Preparation time: {readyInMinutes}</div>
-          {/* <div>Servings: {servings}</div> */}
+          <div className="title">{title}</div>
+          <div id="recipeInfo">
+            Preparation time: {readyInMinutes}
+            {/* <div>Servings: {servings}</div> */}
+            <a className="recipeInfo" href={sourceUrl}>
+              <button className="btnSource">Go to Recipe</button>
+            </a>
+          </div>
         </div>
-        <a className="recipeInfo" href={sourceUrl}>
-          <button className="btnSource">Go to Recipe</button>
-        </a>
       </div>
     </div>
   );

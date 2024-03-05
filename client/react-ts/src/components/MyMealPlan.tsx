@@ -4,6 +4,7 @@ import MealList from './MealList';
 import * as React from 'react';
 import { useEffect } from 'react';
 import { deleteFromPlan } from '../APIService';
+import { MdDeleteOutline } from 'react-icons/md';
 
 type Props = {
   mealPlan: MealPlan[];
@@ -52,13 +53,21 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
         <h1>My Meal Plan</h1>
         {mealPlan.map((el, i) => (
           <React.Fragment key={i}>
+            <MdDeleteOutline
+              className="buttonDelete"
+              onClick={() => handleDelete(el._id)}
+            />
             <MealList mealData={el} setMealPlan={setMealPlan} />
-            <button
+            {/* <button
               className="buttonDelete"
               onClick={() => handleDelete(el._id)}
             >
               DELETE from plan
-            </button>
+            </button> */}
+            {/* <MdDeleteOutline
+              className="buttonDelete"
+              onClick={() => handleDelete(el._id)}
+            /> */}
           </React.Fragment>
         ))}
       </section>

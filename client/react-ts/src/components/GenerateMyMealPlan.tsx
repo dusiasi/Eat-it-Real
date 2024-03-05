@@ -3,6 +3,7 @@ import { MealData, MealPlan } from '../types';
 import * as React from 'react';
 import { addMyPlan } from '../APIService';
 import MealList from './MealList';
+import { FaPlus } from 'react-icons/fa';
 
 type Props = {
   mealPlan: MealPlan[];
@@ -37,9 +38,7 @@ export default function GenerateMyMealPlan({
       <div className="container">
         {Object.values(mealData).length !== 0 && (
           <React.Fragment>
-            <button className="button" onClick={addToMyplan}>
-              Add to my Plan
-            </button>
+            <FaPlus className="buttonAdd" onClick={addToMyplan} />
             <MealList
               mealData={mealData}
               setMealPlan={setMealPlan}
