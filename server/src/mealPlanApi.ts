@@ -1,10 +1,10 @@
 // check later why this doesnt work
 const API_KEY = process.env.API_KEY;
-// const apiKey = '4156b7dc1b5e4110912cbca90242f78a';
+const apiKey = '4156b7dc1b5e4110912cbca90242f78a';
 // const apiKey = 'f89493870f7f49218037ead5e2499e6a';
 // const apiKey = '4f69e984a91b4692957b42e62c9dcb0a';
 // const apiKey = '461cdab76f404525b26fb89265c00d00';
-const apiKey = 'eb4c334e92a24e4aae4fa52c6e2462f2';
+// const apiKey = 'eb4c334e92a24e4aae4fa52c6e2462f2';
 
 // TODOS:
 // api key -should work with env-check with Felipe
@@ -24,12 +24,11 @@ type Meal = {
 //api call to generate meal plan
 export async function generateMealPlan(body: {
   targetCalories?: number;
-  timeFrame?: string;
   diet?: string[];
   exclude?: string;
 }) {
   try {
-    const baseURL = 'https://api.spoonacular.com/mealplanner/generate';
+    const baseURL = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day`;
 
     const params = Object.entries(body)
       .reduce((acc: string[], [key, value]) => {
@@ -39,30 +38,27 @@ export async function generateMealPlan(body: {
       .join('&');
 
     // first api call to generate the
-    const url = `${baseURL}?apiKey=${apiKey}&${params}`;
+    const url = `${baseURL}&${params}`;
+
     const response = await fetch(url);
     const data = await response.json();
 
     // second api call to get the recipe info
-    if (body.timeFrame === 'daily') {
-      const newData = await Promise.all(
-        data.meals.map(async (el: { id: number }) => {
-          const recipeData = await getRecipeInformation(el.id);
-          return recipeData;
-        })
-      );
+    const newData = await Promise.all(
+      data.meals.map(async (el: { id: number }) => {
+        const recipeData = await getRecipeInformation(el.id);
+        return recipeData;
+      })
+    );
 
-      // return data;
-      const mergedData = data.meals.map((meal: Meal, i: number) => ({
-        ...meal,
-        ...newData[i],
-      }));
-      const nutrients = data.nutrients;
+    // return data;
+    const mergedData = data.meals.map((meal: Meal, i: number) => ({
+      ...meal,
+      ...newData[i],
+    }));
+    const nutrients = data.nutrients;
 
-      return { meals: mergedData, nutrients };
-    } else if (body.timeFrame === 'weekly' || 'week') {
-      return data;
-    }
+    return { meals: mergedData, nutrients };
   } catch (error) {
     console.log(error);
   }

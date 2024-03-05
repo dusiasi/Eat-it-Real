@@ -46,11 +46,6 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
     }
   }
 
-  // FAVOORITES IS NOT ACTIVE AT THE MOMENET!DELETE
-  async function addToFavorites(id: string) {
-    console.log('add to favs');
-  }
-
   return (
     <>
       <section className="mealPlanContainer">
@@ -62,12 +57,6 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
               onClick={() => handleDelete(el._id)}
             >
               DELETE from plan
-            </button>
-            <button
-              className="buttonFavs"
-              onClick={() => addToFavorites(el._id)}
-            >
-              Favourite
             </button>
           </React.Fragment>
         ))}

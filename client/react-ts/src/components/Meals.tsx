@@ -18,9 +18,9 @@ export default function Meals({ meal }: Props) {
   return (
     <div className="mealItem">
       <div className="mealInfo">
-        <div className="title">{title}</div>
         <img className="image" src={image} alt="recipe" />
-        <div className="wrapper">
+        <div className="title">{title}</div>
+        <div className="mealInfo-wrapper">
           <div>readyInMinutes: {readyInMinutes}</div>
           <div>servings: {servings}</div>
         </div>

@@ -35,7 +35,7 @@ export default function MealList({ mealData }: Props) {
               <li>Carbohydrates:{nutrients.carbohydrates}</li>
             </ul>
           </section>
-          <div className="dateTime">Created at:{formattedDate}</div>
+          {/* <div className="dateTime">Created at:{formattedDate}</div> */}
         </div>
         <section className="mealList">
           {meals.map((meal, i) => (

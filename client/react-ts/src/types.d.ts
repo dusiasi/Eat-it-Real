@@ -2,7 +2,6 @@ export type Values = {
   calories: string;
   diet: Diet[];
   alergies: string;
-  timeFrame: string;
 };
 
 export type Id = number;

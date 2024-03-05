@@ -30,13 +30,12 @@ type Props = {
 // weekly plan
 
 export default function Form({ setMealData }: Props) {
-  const [showForm, setShowForm] = useState<boolean>(false);
+  // const [showForm, setShowForm] = useState<boolean>(false);
   const [selectedDiets, setSelectedDiets] = useState<Diet[]>([]);
   const [formValues, setFormValues] = useState<Values>({
     calories: '',
     diet: [],
     alergies: '',
-    timeFrame: '',
   });
 
   async function handleSubmit(event: React.FormEvent) {
@@ -51,6 +50,7 @@ export default function Form({ setMealData }: Props) {
 
     // post request to the backend
     const mealData = await generateMealPlan(values);
+    console.log(mealData);
 
     //set the meal data to the mealdata from the backend
 
@@ -63,7 +63,7 @@ export default function Form({ setMealData }: Props) {
       calories: '',
       diet: [],
       alergies: '',
-      timeFrame: '',
+      // timeFrame: '',
     });
   }
 
@@ -76,7 +76,7 @@ export default function Form({ setMealData }: Props) {
   return (
     <>
       {/* {showForm ? ( */}
-      <form className="mealForm" onSubmit={handleSubmit}>
+      <form className="mealFormContainer" onSubmit={handleSubmit}>
         <label htmlFor="calories">
           Calories:
           <input
@@ -86,17 +86,6 @@ export default function Form({ setMealData }: Props) {
             name="calories"
             value={formValues.calories}
           />
-        </label>
-        <label htmlFor="dietChoice">
-          Diet choice:
-          <div className="multiselect">
-            <MultiSelect
-              options={diets}
-              value={selectedDiets}
-              onChange={setSelectedDiets}
-              labelledBy="Select"
-            />
-          </div>
         </label>
         <label htmlFor="alergies">
           Alergies:
@@ -108,15 +97,17 @@ export default function Form({ setMealData }: Props) {
             value={formValues.alergies}
           />
         </label>
-        <label htmlFor="dailyWeekly">
-          Daily/weekly:
-          <input
-            type="text"
-            placeholder="daily/weekly..."
-            onChange={onChange}
-            name="timeFrame"
-            value={formValues.timeFrame}
-          />
+        <label htmlFor="dietChoice">
+          Diet choice:
+          <div className="multiselect">
+            <MultiSelect
+              className="multiSelect"
+              options={diets}
+              value={selectedDiets}
+              onChange={setSelectedDiets}
+              labelledBy="Select"
+            />
+          </div>
         </label>
         <button id="btnSubmit" type="submit">
           Create Meal Plan

@@ -17,6 +17,7 @@ export async function generateMealPlan(body: Values) {
       body: JSON.stringify(body),
     });
     const result = await response.json();
+    console.log(result);
     return result;
   } catch (error) {
     console.log(error);
