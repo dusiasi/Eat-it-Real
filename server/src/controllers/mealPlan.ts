@@ -1,6 +1,7 @@
-import { MealPlan } from '../modal/mealPlan';
+// import MealPlanModel from '../modal/mealPlan';
 import express, { Request, Response } from 'express';
 const mealPlanApi = require('../mealPlanApi');
+import { MealPlan } from '../modal/mealPlan';
 
 // TODO:check to add date created time etc here- where should i add in front or in backend-for the creation
 // 1.Do sorting- by date for the plan it should be a better schema

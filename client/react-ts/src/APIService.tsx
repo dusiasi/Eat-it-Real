@@ -17,7 +17,6 @@ export async function generateMealPlan(body: Values) {
       body: JSON.stringify(body),
     });
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.log(error);
@@ -35,7 +34,6 @@ export async function addMyPlan(body: MealData) {
       body: JSON.stringify(body),
     });
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.log(error);
@@ -49,7 +47,6 @@ export async function getMyPlan() {
   try {
     const response = await fetch(`${baseUrl}/myplan`);
     const result = await response.json();
-    // console.log(result);
     return result;
   } catch (error) {
     console.log(error);

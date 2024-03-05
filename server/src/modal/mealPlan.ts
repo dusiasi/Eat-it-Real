@@ -1,5 +1,5 @@
 import { mongoose } from './index';
-import { Schema, InferSchemaType } from 'mongoose';
+import { Schema, Document, Model, model } from 'mongoose';
 
 // TODOS:
 // check the subdocuments for the relations etc and typescript stuff
@@ -9,7 +9,31 @@ import { Schema, InferSchemaType } from 'mongoose';
 //  for the plan it should be a better schema-check daily,weekly and how i want to receive it in the front
 // do the typescript type definitions, and
 
-const mealPlanSchema = new Schema({
+type Meal = {
+  id: Number;
+  title: String;
+  image?: String;
+  imageType?: String;
+  sourceUrl?: String;
+  summary?: String;
+  servings?: Number;
+  readyInMinutes?: Number;
+};
+
+type Nutrients = {
+  calories?: Number;
+  protein?: Number;
+  fat?: Number;
+  carbohydrates?: Number;
+};
+
+type MealPlan = {
+  meals: Meal[];
+  nutrients: Nutrients;
+  created_at: Date;
+};
+
+const mealPlanSchema = new Schema<MealPlan>({
   meals: [
     {
       id: Number,
@@ -18,7 +42,6 @@ const mealPlanSchema = new Schema({
       imageType: String,
       sourceUrl: String,
       summary: String,
-      // not sure from these two
       servings: Number,
       readyInMinutes: Number,
     },
@@ -33,4 +56,4 @@ const mealPlanSchema = new Schema({
   created_at: { type: Date, default: Date.now() },
 });
 
-export const MealPlan = mongoose.model('MealPlan', mealPlanSchema);
+export const MealPlan = mongoose.model<MealPlan>('MealPlan', mealPlanSchema);

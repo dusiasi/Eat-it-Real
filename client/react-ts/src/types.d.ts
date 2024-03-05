@@ -33,3 +33,15 @@ export type MealData = {
 };
 
 export type MealPlan = Array<MealData>;
+
+export type WeeklyMealData = {
+  week: {
+    monday: MealData;
+    tuesday: MealData;
+    wednesday: MealData;
+    thursday: MealData;
+    friday: MealData;
+    saturday: MealData;
+    sunday: MealData;
+  };
+};

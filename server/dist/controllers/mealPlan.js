@@ -9,31 +9,63 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const mealPlan_1 = require("../modal/mealPlan");
 const mealPlanApi = require('../mealPlanApi');
-exports.post = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log('add to meal plan');
-});
+// TODO:check to add date created time etc here- where should i add in front or in backend-for the creation
+// 1.Do sorting- by date for the plan it should be a better schema
+// 2.add to db only if the list is already not there!!!
+// TODOS:
+// ERROR HANDLING and correct status
+// generate plan with recipe information
 exports.generatePlan = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // i want to send this body to the mealplanapi to make the fetc
     const body = req.body;
     // make the call to the Api with the body of the request that we get from the user
-    const createPlan = mealPlanApi.generateMealPlan(body);
-    // then we should send back the result that we get from the api to the front end
-    // const mealPlan = mealPlanApi.generateMealPlan();
-    // res.send('send the meal plan');
-    res.status(200).json({ msg: 'success' });
-    console.log(req.body);
-    console.log('generate meal plan');
+    const createPlan = yield mealPlanApi.generateMealPlan(body);
+    res.status(201).json(createPlan);
     try {
     }
     catch (error) {
-        // check the status end error handling
         res.status(404).json({ msg: 'error' });
     }
 });
-// {
-//     calories: '2000',
-//      diet: [ 'gluten free', 'vegetarian' ],
-//      alergies: 'egg,soy',
-//      timeFrame: 'daily'
-//    }
+exports.addToMyplan = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const body = req.body;
+    const { meals, nutrients } = body;
+    console.log(body);
+    mealPlan_1.MealPlan.create({ meals, nutrients });
+    res.status(201).json(body);
+    try {
+    }
+    catch (error) {
+        res.status(404).json({ msg: 'error' });
+    }
+});
+// get all the meals from the db
+exports.getAllMeals = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // get the plan from the database
+        const plans = yield mealPlan_1.MealPlan.find({});
+        res.status(200).json(plans);
+    }
+    catch (error) {
+        res.status(404).json({ msg: 'error' });
+    }
+});
+exports.deleteFromPlan = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        const deletePlan = yield mealPlan_1.MealPlan.findByIdAndDelete(id);
+        if (!deletePlan) {
+            res
+                .status(404)
+                .json({ msg: 'Error, the requested resource is not found.' });
+            return;
+        }
+        res.status(204).json({ msg: 'success, the item deleted' });
+    }
+    catch (error) {
+        res
+            .status(500)
+            .json({ msg: 'An unexpected error occurred while deleting the topic' });
+    }
+});

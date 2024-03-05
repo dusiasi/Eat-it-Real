@@ -1,18 +1,76 @@
 nav {
   height: 50%;
   min-height: 70px;
-  background-color: green;
-  padding: min(3vh, 3rem);
   display: flex;
+  padding-block: min(6vh, 6rem);
+  justify-content: space-between;
   align-items: center;
+  background-color: #e1f5bf;
+  font-size: 1.3rem;
+  padding-inline: 7rem;
+  writing-mode: horizontal-tb;
+  margin: 1rem;
 }
 
-/* .navbar {
+nav a {
+  text-decoration: none;
+  color: black;
+}
+#navbarLinks {
   display: flex;
-  justify-content: flex-start;
+  gap: 4rem;
+  flex-direction: row;
+}
+
+#logo {
+  font-weight: 700;
+  font-style: italic;
+}
+
+#navbarHome {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.homepageContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e1f5bf;
+  padding: min(6vh, 6rem);
+  width: 100%;
+  margin: auto;
+  min-height: 300px;
+}
+
+.wrapperHomepage {
+  display: flex;
+  flex-direction: column;
+  padding: min(7vh, 7rem);
+  gap: 1rem;
+}
+
+.homepageText {
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
-  align-items: center;
-} */
+
+  font-weight: 600;
+}
+
+.createButton {
+  background-color: #8bb332;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  width: 23%;
+  padding: 0.8rem;
+}
+
+.homeImage {
+  width: 40%;
+  padding: min(7vh, 7rem);
+}
 
 .mealForm {
   width: 50%;

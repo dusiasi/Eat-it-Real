@@ -1,6 +1,5 @@
 import Meals from './Meals';
 import { MealData, MealPlan } from '../types';
-import { deleteFromPlan } from '../APIService';
 import moment from 'moment';
 
 type Props = {
@@ -15,28 +14,13 @@ type Props = {
 //1. do the week plan later!!!! doesnt work with this one!!!important-if you dont manage-delete the weekly option
 //2.type error by _id below !!!! check with Felipe
 
-export default function MealList({ mealData, setMealPlan }: Props) {
-  // const id = mealData._id;
+export default function MealList({ mealData }: Props) {
   const nutrients = mealData.nutrients;
   const meals = mealData.meals;
   const created_at = mealData.created_at;
 
   // not sure about date, if i want to display it or not
   const formattedDate = moment(created_at).format('MMMM Do, YYYY');
-
-  // async function handleDelete() {
-  //   try {
-  //     await deleteFromPlan(id);
-
-  //     setMealPlan((prevList) =>
-  //       prevList.filter((el) => {
-  //         return el._id !== id;
-  //       })
-  //     );
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
   return (
     <>
@@ -57,9 +41,6 @@ export default function MealList({ mealData, setMealPlan }: Props) {
           {meals.map((meal, i) => (
             <Meals key={i} meal={meal} />
           ))}
-          {/* <button className="buttonDelete" onClick={handleDelete}>
-            Delete from plan
-          </button> */}
         </section>
       </div>
     </>

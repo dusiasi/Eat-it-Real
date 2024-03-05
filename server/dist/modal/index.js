@@ -18,6 +18,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 exports.mongoose = mongoose_1.default;
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
+        // change the name of the database
         yield mongoose_1.default.connect('mongodb://localhost:27017/test');
         console.log('connected');
     });

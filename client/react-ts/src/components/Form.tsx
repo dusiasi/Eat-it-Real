@@ -27,6 +27,7 @@ type Props = {
 // TODOS:
 // 1.generating meal plan takes a little bit time, check it with Felipe
 // 2.decide if you want it the form to stay always there or come with button click!!!
+// weekly plan
 
 export default function Form({ setMealData }: Props) {
   const [showForm, setShowForm] = useState<boolean>(false);
@@ -52,6 +53,7 @@ export default function Form({ setMealData }: Props) {
     const mealData = await generateMealPlan(values);
 
     //set the meal data to the mealdata from the backend
+
     setMealData(mealData);
 
     // empty the form

@@ -13,31 +13,26 @@ type Props = {
 
 // MyMEALPLAN: mymeal plan component which goes to another page which displays the list of added plans
 // todos:
-// mealData is giving type error below-check with Felipe
+// mealData and _id is giving type error below-check with Felipe
 // organisation of the page-do we want favorits, how to sort, how to organize this page like weekly plan or sth different,
 // add -FAVS-favorites-make a list of favorites
 // add -WEEKLY PLAN-weekly plan
 // styling!!!
 
-// get the meal plan from the database
 export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
-  const id = mealData._id;
-
+  // get my plan from the server-db
   useEffect(() => {
     async function setData() {
       const result = await getMyPlan();
 
-      // not sure of this
-      const sortedList = [...result].sort((a, b) => {
-        return Date.parse(b.created_at) - Date.parse(a.created_at);
-      });
-      setMealPlan(sortedList);
+      setMealPlan(result);
     }
 
     setData();
   }, []);
 
-  async function handleDelete() {
+  // delete from the plan
+  async function handleDelete(id: string) {
     try {
       await deleteFromPlan(id);
 
@@ -51,15 +46,28 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
     }
   }
 
+  // FAVOORITES IS NOT ACTIVE AT THE MOMENET!DELETE
+  async function addToFavorites(id: string) {
+    console.log('add to favs');
+  }
+
   return (
     <>
       <section className="mealPlanContainer">
         {mealPlan.map((el, i) => (
           <React.Fragment key={i}>
             <MealList mealData={el} setMealPlan={setMealPlan} />
-
-            <button className="buttonDelete" onClick={handleDelete}>
-              DELETE
+            <button
+              className="buttonDelete"
+              onClick={() => handleDelete(el._id)}
+            >
+              DELETE from plan
+            </button>
+            <button
+              className="buttonFavs"
+              onClick={() => addToFavorites(el._id)}
+            >
+              Favourite
             </button>
           </React.Fragment>
         ))}

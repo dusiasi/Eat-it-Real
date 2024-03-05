@@ -19,17 +19,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              mealPlan={mealPlan}
-              setMealPlan={setMealPlan}
-              mealData={mealData}
-              setMealData={setMealData}
-            />
-          }
-        />
+        <Route path="/" element={<Home />} />
         <Route
           path="/myMealPlan"
           element={
