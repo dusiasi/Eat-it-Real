@@ -142,10 +142,10 @@ nav a {
   width: 20%;
   padding: 0.4rem;
   opacity: 0.7;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
-#btnSubmit:hover {
+.btnSubmit:hover {
   opacity: 1;
 }
 
@@ -153,7 +153,11 @@ nav a {
 
 .container {
   padding: min(6vh, 6rem);
-  position: relative;
+  margin: 4rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
 }
 
 .mealPlanContainer {
@@ -167,10 +171,6 @@ nav a {
   gap: 1rem;
 }
 
-h1 {
-  padding-inline-start: 1rem;
-}
-
 .containerMealList {
   display: flex;
   flex-direction: column;
@@ -182,14 +182,13 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .mealList {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-template-columns: repeat(3, 1fr); */
 }
 
 .buttonDelete {
@@ -205,22 +204,19 @@ h1 {
   background-color: white;
   border-radius: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding: 1rem;
-  background-color: white;
-  background-color: white;
+  padding-inline: 2rem;
+  padding-block: 4rem;
 }
 
 .mealInfo {
-  /* padding: 2rem; */
   display: flex;
   flex-direction: column;
   background-color: white;
-  gap: 1rem;
-  /* margin: 1rem; */
+  gap: 1.6rem;
 }
 
 .btnSource {
-  align-self: flex-start;
+  align-self: flex-end;
   background-color: #8bb332;
   color: white;
   border: none;
@@ -244,16 +240,15 @@ h1 {
   flex-direction: column;
   background-color: white;
   align-items: flex-start;
+  gap: 0.3rem;
 }
 
 #recipeInfo {
   background-color: white;
-  /* align-self: flex-start; */
   font-size: x-small;
 }
 .recipeInfo {
   background-color: white;
-  /* align-self: flex-start; */
 }
 
 .image {
@@ -263,7 +258,7 @@ h1 {
   right: 0;
   top: 0;
   bottom: 0;
-  /* margin: auto; */
+  margin: auto;
 }
 
 .image-crop {
@@ -276,14 +271,14 @@ h1 {
 }
 
 .buttonAdd {
-  background-color: white;
-  white-space: nowrap;
-  position: absolute;
-  top: 10%;
-  left: 94%;
-  margin: 5px;
+  display: flex;
+  align-self: flex-end;
   cursor: pointer;
   opacity: 0.3;
+  /* position: absolute;
+  top: 9%;
+  left: 95%; */
+  /* margin: 5px; */
 }
 .buttonAdd:hover {
   opacity: 1;

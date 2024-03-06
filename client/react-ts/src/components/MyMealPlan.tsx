@@ -14,11 +14,6 @@ type Props = {
 
 // MyMEALPLAN: mymeal plan component which goes to another page which displays the list of added plans
 // todos:
-// mealData and _id is giving type error below-check with Felipe
-// organisation of the page-do we want favorits, how to sort, how to organize this page like weekly plan or sth different,
-// add -FAVS-favorites-make a list of favorites
-// add -WEEKLY PLAN-weekly plan
-// styling!!!
 
 export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
   // get my plan from the server-db
@@ -58,16 +53,6 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
               onClick={() => handleDelete(el._id)}
             />
             <MealList mealData={el} setMealPlan={setMealPlan} />
-            {/* <button
-              className="buttonDelete"
-              onClick={() => handleDelete(el._id)}
-            >
-              DELETE from plan
-            </button> */}
-            {/* <MdDeleteOutline
-              className="buttonDelete"
-              onClick={() => handleDelete(el._id)}
-            /> */}
           </React.Fragment>
         ))}
       </section>

@@ -14,8 +14,6 @@ export default function Meals({ meal }: Props) {
   const { id, title, readyInMinutes, servings, sourceUrl, image, summary } =
     meal;
 
-  // summary.replace(/<[^>]*>/g, '');
-
   return (
     <div className="mealItem">
       <div className="mealInfo">
@@ -25,7 +23,7 @@ export default function Meals({ meal }: Props) {
         <div className="mealInfo-wrapper">
           <div className="title">{title}</div>
           <div id="recipeInfo">
-            Preparation time: {readyInMinutes}
+            Preparation time: {readyInMinutes} mins
             {/* <div>Servings: {servings}</div> */}
             <a className="recipeInfo" href={sourceUrl}>
               <button className="btnSource">Go to Recipe</button>
