@@ -1,13 +1,12 @@
 # Eat it Real
 
-The Daily Meal Prep App is a web application designed to help users plan their meals efficiently by providing a variety of recipes and meal ideas. It utilizes the Spoonacular API to fetch recipe data based on different criteria such as ingredients and diet.
+Eat it Real The Daily Meal Prep App is a web application designed to help users plan their meals efficiently by providing a variety of recipes and meal ideas. It utilizes the Spoonacular API to generate daily meal plans based on different criteria such as allergies, diet and calories.
 
-Features
+# Features
 Generate Meal Plan: Users can generate daily meal plan by using keywords including allergies and diets. 
+Save Meal Plan: Users can save their favorite plans and add to their meal plan.
 
-Save Favorites: Users can save their favorite plans and add to their meal plan.
-
-Technologies Used
+# Tech Stack
 Frontend: React, Typescript, Vanilla Css 
 
 Backend: Node.js (Express.js), Typescript
