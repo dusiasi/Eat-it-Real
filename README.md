@@ -27,16 +27,14 @@ Database: MongoDB (Mongoose)
 To run the Daily Meal Prep App locally, follow these steps:
 
 Clone the repository:https://github.com/dusiasi/Eat-it-Real.git
-Navigate to the client directory and install dependencies: cd client npm install 
-
-Set up environment variables:
-Create a .env file in the root directory.
-Add the necessary environment variables such as API keys and database connection strings.
 
 Navigate to the client directory and install dependencies: cd client/react-ts npm install 
 Run the client: npm run dev
 
 Navigate to the server directory and install dependencies: cd server npm install 
+
+Create a .env file in the root directory. Add the necessary environment variables such as API keys and database connection strings. 
+
 Run the server:npm start
 
 ### Acknowledgements
