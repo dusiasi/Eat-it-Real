@@ -19,7 +19,7 @@ Database: MongoDB (Mongoose)
 Installation:  
 
 To run the Daily Meal Prep App locally, follow these steps:
-Clone the repository:git clone https://github.com/dusiasi/Eat-it-Real.git
+Clone the repository:https://github.com/dusiasi/Eat-it-Real.git
 Navigate to the client directory and install dependencies: cd client npm install 
 
 Set up environment variables:
@@ -35,11 +35,13 @@ Run the server:npm start
 Acknowledgements
 The Daily Meal Prep App uses the Spoonacular API to fetch recipe data. Special thanks to Spoonacular for providing the API.
 
-<img width="1399" alt="Bildschirmfoto 2024-03-29 um 14 37 34" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/ef65d788-e645-48fe-a011-bac482496780">
+<img width="1399" alt="Bildschirmfoto 2024-03-29 um 14 37 34" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/e501aa23-3a31-4e97-91a5-d90cb3b70a1a">
 
-<img width="1421" alt="Bildschirmfoto 2024-03-29 um 14 36 22" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/51f75716-f4aa-4c73-b572-511d3cc88837">
+<img width="1421" alt="Bildschirmfoto 2024-03-29 um 14 36 22" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/e3c117c8-2af5-4cae-9931-20716cf3752d">
 
-<img width="1410" alt="Bildschirmfoto 2024-03-29 um 14 36 40" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/b0b2301c-4bdb-42b5-98e8-a3108017b677">
+<img width="1410" alt="Bildschirmfoto 2024-03-29 um 14 36 40" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/60ed8286-f0f0-4051-b85c-ae716fd048f9">
+
+
 
 
 
