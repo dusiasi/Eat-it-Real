@@ -12,7 +12,7 @@ Save Meal Plan: Users can save their favorite plans and add to their meal plan.
 
 <img width="1410" alt="Bildschirmfoto 2024-03-29 um 14 36 40" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/60ed8286-f0f0-4051-b85c-ae716fd048f9">
 
-# Tech Stack
+## Tech Stack
 Frontend: React, Typescript, Vanilla Css 
 
 Backend: Node.js (Express.js), Typescript
@@ -21,7 +21,8 @@ API: Spoonacular API for recipe data
 
 Database: MongoDB (Mongoose)
 
-Installation:  
+
+### Installation
 
 To run the Daily Meal Prep App locally, follow these steps:
 
@@ -38,7 +39,7 @@ Run the client: npm run dev
 Navigate to the server directory and install dependencies: cd server npm install 
 Run the server:npm start
 
-Acknowledgements:
+### Acknowledgements
 
 The Daily Meal Prep App uses the Spoonacular API to fetch recipe data. Special thanks to Spoonacular for providing the API.
 
