@@ -6,6 +6,12 @@ Eat it Real The Daily Meal Prep App is a web application designed to help users 
 Generate Meal Plan: Users can generate daily meal plan by using keywords including allergies and diets. 
 Save Meal Plan: Users can save their favorite plans and add to their meal plan.
 
+<img width="1399" alt="Bildschirmfoto 2024-03-29 um 14 37 34" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/e501aa23-3a31-4e97-91a5-d90cb3b70a1a">
+
+<img width="1421" alt="Bildschirmfoto 2024-03-29 um 14 36 22" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/e3c117c8-2af5-4cae-9931-20716cf3752d">
+
+<img width="1410" alt="Bildschirmfoto 2024-03-29 um 14 36 40" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/60ed8286-f0f0-4051-b85c-ae716fd048f9">
+
 # Tech Stack
 Frontend: React, Typescript, Vanilla Css 
 
@@ -34,11 +40,6 @@ Run the server:npm start
 Acknowledgements
 The Daily Meal Prep App uses the Spoonacular API to fetch recipe data. Special thanks to Spoonacular for providing the API.
 
-<img width="1399" alt="Bildschirmfoto 2024-03-29 um 14 37 34" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/e501aa23-3a31-4e97-91a5-d90cb3b70a1a">
-
-<img width="1421" alt="Bildschirmfoto 2024-03-29 um 14 36 22" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/e3c117c8-2af5-4cae-9931-20716cf3752d">
-
-<img width="1410" alt="Bildschirmfoto 2024-03-29 um 14 36 40" src="https://github.com/dusiasi/Eat-it-Real/assets/160134285/60ed8286-f0f0-4051-b85c-ae716fd048f9">
 
 
 
