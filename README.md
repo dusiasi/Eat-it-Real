@@ -24,6 +24,7 @@ Database: MongoDB (Mongoose)
 Installation:  
 
 To run the Daily Meal Prep App locally, follow these steps:
+
 Clone the repository:https://github.com/dusiasi/Eat-it-Real.git
 Navigate to the client directory and install dependencies: cd client npm install 
 
