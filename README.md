@@ -38,7 +38,8 @@ Run the client: npm run dev
 Navigate to the server directory and install dependencies: cd server npm install 
 Run the server:npm start
 
-Acknowledgements
+Acknowledgements:
+
 The Daily Meal Prep App uses the Spoonacular API to fetch recipe data. Special thanks to Spoonacular for providing the API.
 
 
