@@ -22,15 +22,7 @@ type Props = {
   setMealData: React.Dispatch<React.SetStateAction<MealData>>;
 };
 
-// FORM: makes the api call to generate the mealplan, and handles the form
-
-// TODOS:
-// 1.generating meal plan takes a little bit time, check it with Felipe
-// 2.decide if you want it the form to stay always there or come with button click!!!
-// weekly plan
-
 export default function Form({ setMealData }: Props) {
-  // const [showForm, setShowForm] = useState<boolean>(false);
   const [selectedDiets, setSelectedDiets] = useState<Diet[]>([]);
   const [formValues, setFormValues] = useState<Values>({
     calories: '',
@@ -63,7 +55,6 @@ export default function Form({ setMealData }: Props) {
       calories: '',
       diet: [],
       alergies: '',
-      // timeFrame: '',
     });
   }
 
@@ -75,7 +66,6 @@ export default function Form({ setMealData }: Props) {
 
   return (
     <>
-      {/* {showForm ? ( */}
       <form className="mealFormContainer" onSubmit={handleSubmit}>
         <label htmlFor="calories">
           Calories:
@@ -112,11 +102,7 @@ export default function Form({ setMealData }: Props) {
         <button className="btnSubmit" type="submit">
           Create Daily Meal Plan
         </button>
-        {/* {<button onClick={() => setShowForm(false)}>Discard</button>} */}
       </form>
-      {/* ) : (
-        <button onClick={() => setShowForm(true)}>Create Meal Plan</button>
-      )} */}
     </>
   );
 }

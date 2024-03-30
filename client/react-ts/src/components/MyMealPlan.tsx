@@ -12,11 +12,7 @@ type Props = {
   mealData: MealData;
 };
 
-// MyMEALPLAN: mymeal plan component which goes to another page which displays the list of added plans
-// todos:
-
-export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
-  // get my plan from the server-db
+export default function MyMealPlan({ mealPlan, setMealPlan }: Props) {
   useEffect(() => {
     async function setData() {
       const result = await getMyPlan();
@@ -27,7 +23,6 @@ export default function MyMealPlan({ mealPlan, setMealPlan, mealData }: Props) {
     setData();
   }, []);
 
-  // delete from the plan
   async function handleDelete(id: string) {
     try {
       await deleteFromPlan(id);

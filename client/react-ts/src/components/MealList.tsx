@@ -7,11 +7,6 @@ type Props = {
   mealPlan: MealPlan[];
 };
 
-// MEALLIST:the list when we get the data-mealData- either from the db or the api, where we loop over and render the meals
-
-// TODOS:
-//2.type error by _id below !!!! check with Felipe
-
 export default function MealList({ mealData }: Props) {
   const nutrients = mealData.nutrients;
   const meals = mealData.meals;
